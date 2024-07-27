@@ -48,7 +48,7 @@ watch(() => window.innerWidth, () => {
   </div>
   <!-- Background video -->
   <div class="tm-video-wrapper">
-    <div class="aspect-ratio-box">
+    <div id="ratio" class="aspect-ratio-box">
       <video autoplay muted loop id="tm-video">
         <source src="/video/wave-cafe-video-bg.mp4" type="video/mp4">
       </video>
