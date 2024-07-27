@@ -491,7 +491,10 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
+            // Cache Google Fonts
+            urlPattern: ({ url }) =>
+              url.origin === 'https://fonts.googleapis.com' ||
+              url.origin === 'https://fonts.gstatic.com',
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'google-fonts',
@@ -502,7 +505,8 @@ export default defineConfig({
             }
           },
           {
-            urlPattern: new RegExp('https://cdn.jsdelivr.net/(.*)'),
+            // Cache JSDelivr CDN
+            urlPattern: ({ url }) => url.origin === 'https://cdn.jsdelivr.net',
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'cdn-jsdelivr',
@@ -513,7 +517,8 @@ export default defineConfig({
             }
           },
           {
-            urlPattern: new RegExp('https://unpkg.com/(.*)'),
+            // Cache Unpkg CDN
+            urlPattern: ({ url }) => url.origin === 'https://unpkg.com',
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'unpkg',
@@ -524,7 +529,11 @@ export default defineConfig({
             }
           },
           {
-            urlPattern: new RegExp('.(?:css|js|png|mp4|webm)$'),
+            // Cache static resources (CSS, JS, images, etc.)
+            urlPattern: ({ request }) =>
+              request.destination === 'style' ||
+              request.destination === 'script' ||
+              request.destination === 'image',
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'static-resources',
@@ -534,19 +543,10 @@ export default defineConfig({
               }
             }
           },
-          // {
-          //   urlPattern: new RegExp('/$'),
-          //   handler: 'NetworkFirst',
-          //   options: {
-          //     cacheName: 'start-url',
-          //     expiration: {
-          //       maxEntries: 1,
-          //       maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
-          //     }
-          //   }
-          // },
           {
-            urlPattern: new RegExp('.*/video/.*.mp4$'),
+            // Cache video files
+            urlPattern: ({ url }) =>
+              url.pathname.endsWith('.mp4') && url.pathname.includes('/video/'),
             handler: 'CacheFirst',
             options: {
               cacheName: 'video-cache',
