@@ -47,7 +47,7 @@ async function fetchAllAssets(assetsArr: Array<string>) {
   setTimeout(() => {
     const ratio = document.getElementById('ratio')
     console.log(ratio)
-    ratio.classList.remove('aspect-ratio-box')
+    ratio?.classList.remove('aspect-ratio-box')
   }, 2000)
 
   setTimeout(async () => {
