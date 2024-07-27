@@ -34,6 +34,9 @@ const currentType = ref<string>('cold');
 function show(type: string) {
     showDrinks.value = drinksTable[type].value;
     currentType.value = type;
+    //scroll to bottom little bit
+    window.scrollTo(0, 1000);
+
 }
 </script>
 
@@ -43,15 +46,15 @@ function show(type: string) {
         <nav class="tm-black-bg tm-drinks-nav">
             <ul>
                 <li>
-                    <a @click="show('cold')" href="#" :class="['tm-tab-link', { 'active': currentType === 'cold' }]"
+                    <a @click.prevent="show('cold')" :class="['tm-tab-link', { 'active': currentType === 'cold' }]"
                         data-id="cold">Iced Coffee</a>
                 </li>
                 <li>
-                    <a @click="show('hot')" href="#" :class="['tm-tab-link', { 'active': currentType === 'hot' }]"
+                    <a @click.prevent="show('hot')" :class="['tm-tab-link', { 'active': currentType === 'hot' }]"
                         data-id="hot">Hot Coffee</a>
                 </li>
                 <li>
-                    <a @click="show('juice')" href="#" :class="['tm-tab-link', { 'active': currentType === 'juice' }]"
+                    <a @click.prevent="show('juice')" :class="['tm-tab-link', { 'active': currentType === 'juice' }]"
                         data-id="juice">Fruit Juice</a>
                 </li>
             </ul>
@@ -62,3 +65,8 @@ function show(type: string) {
         <!-- end Drink Menu Page -->
     </div>
 </template>
+<style scoped>
+a:hover {
+    cursor: pointer;
+}
+</style>

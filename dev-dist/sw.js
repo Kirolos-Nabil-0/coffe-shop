@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-ada28830'], (function (workbox) { 'use strict';
+define(['./workbox-38e27950'], (function (workbox) { 'use strict';
 
   self.skipWaiting();
   workbox.clientsClaim();
@@ -82,7 +82,7 @@ define(['./workbox-ada28830'], (function (workbox) { 'use strict';
     "revision": "3ca0b8505b4bec776b69afdba2768812"
   }, {
     "url": "index.html",
-    "revision": "0.n5sbgqau3k8"
+    "revision": "0.g1ad8q21na"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
@@ -109,21 +109,14 @@ define(['./workbox-ada28830'], (function (workbox) { 'use strict';
       maxAgeSeconds: 31536000
     })]
   }), 'GET');
-  workbox.registerRoute(/.(?:css|js|png|.mp4|webm)/, new workbox.StaleWhileRevalidate({
+  workbox.registerRoute(/.(?:css|js|png|mp4|webm)$/, new workbox.StaleWhileRevalidate({
     "cacheName": "static-resources",
     plugins: [new workbox.ExpirationPlugin({
       maxEntries: 60,
       maxAgeSeconds: 31536000
     })]
   }), 'GET');
-  workbox.registerRoute(/\//, new workbox.NetworkFirst({
-    "cacheName": "start-url",
-    plugins: [new workbox.ExpirationPlugin({
-      maxEntries: 1,
-      maxAgeSeconds: 31536000
-    })]
-  }), 'GET');
-  workbox.registerRoute(/.*\/video\/.*.mp4/, new workbox.CacheFirst({
+  workbox.registerRoute(/.*\/video\/.*.mp4$/, new workbox.CacheFirst({
     "cacheName": "video-cache",
     plugins: [new workbox.ExpirationPlugin({
       maxEntries: 10,
