@@ -4,18 +4,18 @@ import type { item } from '../types';
 import coffeItemList from './coffeItemList.vue';
 
 const drinks = ref<item[]>([
-    { type: "cold", name: "Iced Americano", price: "10.25", description: "Here is a short description for the first item. Wave Cafe Template is provided by Tooplate.", image: "/img/iced-americano.png" },
-    { type: "cold", name: "Iced Cappuccino", price: "12.50", description: "Here is a list of 4 items or add more. You can use this template for commercial purposes.", image: "/img/iced-cappuccino.png" },
-    { type: "cold", name: "Iced Espresso", price: "14.25", description: "You are not permitted to redistribute this template ZIP file on any other template websites.", image: "/img/iced-espresso.png" },
-    { type: "cold", name: "Iced Latte", price: "11.50", description: "Contents are organized into 3 tabs. Please contact Tooplate if you have anything to ask.", image: "/img/iced-latte.png" },
-    { type: "hot", name: "Hot Americano", price: "8.50", description: "Here is a short description for the item along with a squared thumbnail.", image: "/img/hot-americano.png" },
-    { type: "hot", name: "Hot Cappuccino", price: "9.50", description: "Here is a list of 4 items that can add more as you need. Only content area will be scrolling.", image: "/img/hot-cappuccino.png" },
-    { type: "hot", name: "Hot Espresso", price: "7.50", description: "Left side logo and main menu are fixed. The video background is fixed.", image: "/img/hot-espresso.png" },
-    { type: "hot", name: "Hot Latte", price: "6.50", description: "Page contents are organized into 3 tabs to show different lists of items.", image: "/img/hot-latte.png" },
-    { type: "juice", name: "Strawberry Smoothie", price: "12.50", description: "Here is a short description for the item along with a squared thumbnail.", image: "/img/smoothie-1.png" },
-    { type: "juice", name: "Red Berry Smoothie", price: "14.50", description: "Here is a list of 4 items or add more. You can use this template for commercial purposes.", image: "/img/smoothie-2.png" },
-    { type: "juice", name: "Pineapple Smoothie", price: "16.50", description: "Left side logo and main menu are fixed. The video background is fixed.", image: "/img/smoothie-3.png" },
-    { type: "juice", name: "Spinach Smoothie", price: "18.50", description: "You are not allowed to redistribute the template ZIP file on other template sites.", image: "/img/smoothie-4.png" }
+    { type: "cold", name: "Iced Americano", price: "10.25", description: "A refreshing cold brew of rich Americano.", image: "/img/iced-americano.png" },
+    { type: "cold", name: "Iced Cappuccino", price: "12.50", description: "Chilled cappuccino with a frothy milk foam.", image: "/img/iced-cappuccino.png" },
+    { type: "cold", name: "Iced Espresso", price: "14.25", description: "Intense and bold iced espresso shot.", image: "/img/iced-espresso.png" },
+    { type: "cold", name: "Iced Latte", price: "11.50", description: "Smooth iced latte with a hint of sweetness.", image: "/img/iced-latte.png" },
+    { type: "hot", name: "Hot Americano", price: "8.50", description: "A strong and robust hot Americano.", image: "/img/hot-americano.png" },
+    { type: "hot", name: "Hot Cappuccino", price: "9.50", description: "Classic hot cappuccino with steamed milk.", image: "/img/hot-cappuccino.png" },
+    { type: "hot", name: "Hot Espresso", price: "7.50", description: "Rich and aromatic hot espresso.", image: "/img/hot-espresso.png" },
+    { type: "hot", name: "Hot Latte", price: "6.50", description: "Creamy hot latte with a smooth finish.", image: "/img/hot-latte.png" },
+    { type: "juice", name: "Strawberry Smoothie", price: "12.50", description: "Refreshing strawberry smoothie.", image: "/img/smoothie-1.png" },
+    { type: "juice", name: "Red Berry Smoothie", price: "14.50", description: "A mix of berries blended into a smoothie.", image: "/img/smoothie-2.png" },
+    { type: "juice", name: "Pineapple Smoothie", price: "16.50", description: "Tropical pineapple smoothie.", image: "/img/smoothie-3.png" },
+    { type: "juice", name: "Spinach Smoothie", price: "18.50", description: "Healthy spinach smoothie with a sweet twist.", image: "/img/smoothie-4.png" }
 ]);
 
 const hotDrinks = computed<item[]>(() => drinks.value.filter((drink) => drink.type === 'hot'));
@@ -36,7 +36,6 @@ function show(type: string) {
     currentType.value = type;
     //scroll to bottom little bit
     window.scrollTo(0, 1000);
-
 }
 </script>
 
@@ -65,6 +64,7 @@ function show(type: string) {
         <!-- end Drink Menu Page -->
     </div>
 </template>
+
 <style scoped>
 a:hover {
     cursor: pointer;

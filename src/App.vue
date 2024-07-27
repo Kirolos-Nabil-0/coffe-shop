@@ -48,10 +48,12 @@ watch(() => window.innerWidth, () => {
   </div>
   <!-- Background video -->
   <div class="tm-video-wrapper">
-    <i id="tm-video-control-button" class="fas fa-pause"></i>
-    <video autoplay muted loop id="tm-video">
-      <source src="/video/wave-cafe-video-bg.mp4" type="video/mp4">
-    </video>
+    <div class="aspect-ratio-box">
+      <video autoplay muted loop id="tm-video">
+        <source src="/video/wave-cafe-video-bg.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
+
 
 </template>

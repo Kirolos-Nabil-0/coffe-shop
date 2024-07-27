@@ -1,6 +1,6 @@
 <template>
     <div class="tm-list-item">
-        <img :src="props.item.image" alt="Image" class="tm-list-item-img">
+        <img loading="lazy" width="160" height="160" :src="props.item.image" alt="Image" class="tm-list-item-img">
         <div class="tm-black-bg tm-list-item-text">
             <h3 class="tm-list-item-name">{{ props.item.name }}<span class="tm-list-item-price">${{ props.item.price
                     }}</span>

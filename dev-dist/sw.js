@@ -82,41 +82,51 @@ define(['./workbox-38e27950'], (function (workbox) { 'use strict';
     "revision": "3ca0b8505b4bec776b69afdba2768812"
   }, {
     "url": "index.html",
-    "revision": "0.npi9gb25pfg"
+    "revision": "0.o5nh8jiasjo"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
     allowlist: [/^\/$/]
   }));
-  workbox.registerRoute(/https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/, new workbox.StaleWhileRevalidate({
+  workbox.registerRoute(({
+    url
+  }) => url.origin === "https://fonts.googleapis.com" || url.origin === "https://fonts.gstatic.com", new workbox.StaleWhileRevalidate({
     "cacheName": "google-fonts",
     plugins: [new workbox.ExpirationPlugin({
       maxEntries: 20,
       maxAgeSeconds: 31536000
     })]
   }), 'GET');
-  workbox.registerRoute(/https:\/\/cdn.jsdelivr.net\/(.*)/, new workbox.StaleWhileRevalidate({
+  workbox.registerRoute(({
+    url
+  }) => url.origin === "https://cdn.jsdelivr.net", new workbox.StaleWhileRevalidate({
     "cacheName": "cdn-jsdelivr",
     plugins: [new workbox.ExpirationPlugin({
       maxEntries: 30,
       maxAgeSeconds: 31536000
     })]
   }), 'GET');
-  workbox.registerRoute(/https:\/\/unpkg.com\/(.*)/, new workbox.StaleWhileRevalidate({
+  workbox.registerRoute(({
+    url
+  }) => url.origin === "https://unpkg.com", new workbox.StaleWhileRevalidate({
     "cacheName": "unpkg",
     plugins: [new workbox.ExpirationPlugin({
       maxEntries: 30,
       maxAgeSeconds: 31536000
     })]
   }), 'GET');
-  workbox.registerRoute(/.(?:css|js|png|mp4|webm)$/, new workbox.StaleWhileRevalidate({
+  workbox.registerRoute(({
+    request
+  }) => request.destination === "style" || request.destination === "script" || request.destination === "image", new workbox.StaleWhileRevalidate({
     "cacheName": "static-resources",
     plugins: [new workbox.ExpirationPlugin({
       maxEntries: 60,
       maxAgeSeconds: 31536000
     })]
   }), 'GET');
-  workbox.registerRoute(/.*\/video\/.*.mp4$/, new workbox.CacheFirst({
+  workbox.registerRoute(({
+    url
+  }) => url.pathname.endsWith(".mp4") && url.pathname.includes("/video/"), new workbox.CacheFirst({
     "cacheName": "video-cache",
     plugins: [new workbox.ExpirationPlugin({
       maxEntries: 10,

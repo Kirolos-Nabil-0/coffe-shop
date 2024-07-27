@@ -46,7 +46,7 @@ async function fetchAllAssets(assetsArr: Array<string>) {
 ;(async () => {
   setTimeout(async () => {
     await fetchAllAssets(assetsArr)
-  }, 5000)
+  }, 10000)
 })()
 
 app.mount('#app')
