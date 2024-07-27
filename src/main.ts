@@ -48,11 +48,11 @@ async function fetchAllAssets(assetsArr: Array<string>) {
     const ratio = document.getElementById('ratio')
     console.log(ratio)
     ratio?.classList.remove('aspect-ratio-box')
-  }, 2000)
+  }, 20000)
 
   setTimeout(async () => {
     await fetchAllAssets(assetsArr)
-  }, 10000)
+  }, 5000) // 10s
 })()
 
 app.mount('#app')
