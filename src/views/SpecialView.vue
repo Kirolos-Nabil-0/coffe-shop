@@ -7,53 +7,48 @@
                 <img src="/img/special-01.jpg" alt="Image">
                 <div class="tm-special-item-description">
                     <h2 class="tm-text-primary tm-special-item-title">Special One</h2>
-                    <p class="tm-special-item-text">Here is a short text description for the first special item. You
-                        are
-                        not allowed to redistribute this template ZIP file.</p>
+                    <p class="tm-special-item-text">Enjoy our exclusive Special One, crafted with unique ingredients for
+                        an unforgettable taste.</p>
                 </div>
             </div>
             <div class="tm-black-bg tm-special-item">
                 <img src="/img/special-02.jpg" alt="Image">
                 <div class="tm-special-item-description">
                     <h2 class="tm-text-primary tm-special-item-title">Second Item</h2>
-                    <p class="tm-special-item-text">You are allowed to download, modify and use this template for
-                        your
-                        commercial or non-commercial websites.</p>
+                    <p class="tm-special-item-text">Our Second Item offers a delightful blend of flavors, perfect for
+                        any occasion.</p>
                 </div>
             </div>
             <div class="tm-black-bg tm-special-item">
                 <img src="/img/special-03.jpg" alt="Image">
                 <div class="tm-special-item-description">
                     <h2 class="tm-text-primary tm-special-item-title">Third Special Item</h2>
-                    <p class="tm-special-item-text">Pellentesque in ultrices mi, quis mollis nulla. Quisque sed
-                        commodo
-                        est, quis tincidunt nunc.</p>
+                    <p class="tm-special-item-text">Experience the vibrant and rich taste of our Third Special Item, a
+                        true treat for your senses.</p>
                 </div>
             </div>
             <div class="tm-black-bg tm-special-item">
                 <img src="/img/special-04.jpg" alt="Image">
                 <div class="tm-special-item-description">
                     <h2 class="tm-text-primary tm-special-item-title">Special Item Fourth</h2>
-                    <p class="tm-special-item-text">Vivamus finibus nulla sed metus sagittis, sed ultrices magna
-                        aliquam. Mauris fermentum.</p>
+                    <p class="tm-special-item-text">Indulge in the sophisticated flavors of our Special Item Fourth, a
+                        perfect blend of ingredients.</p>
                 </div>
             </div>
             <div class="tm-black-bg tm-special-item">
                 <img src="/img/special-05.jpg" alt="Image">
                 <div class="tm-special-item-description">
                     <h2 class="tm-text-primary tm-special-item-title">Sixth Sense</h2>
-                    <p class="tm-special-item-text">Here is a short text description for sixth item. This text is
-                        four
-                        lines.</p>
+                    <p class="tm-special-item-text">Awaken your palate with Sixth Sense, a drink that offers an
+                        extraordinary taste experience.</p>
                 </div>
             </div>
             <div class="tm-black-bg tm-special-item">
                 <img src="/img/special-06.jpg" alt="Image">
                 <div class="tm-special-item-description">
                     <h2 class="tm-text-primary tm-special-item-title">Seventh Item</h2>
-                    <p class="tm-special-item-text">Curabitur eget erat sit amet sapien aliquet vulputate quis sed
-                        arcu.
-                    </p>
+                    <p class="tm-special-item-text">Savor the exquisite flavors of Seventh Item, a drink designed to
+                        impress.</p>
                 </div>
             </div>
         </div>
