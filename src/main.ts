@@ -43,16 +43,33 @@ async function fetchAllAssets(assetsArr: Array<string>) {
   )
 }
 
+// IIFE to run only on the first visit
 ;(async () => {
-  setTimeout(() => {
-    const ratio = document.getElementById('ratio')
-    console.log(ratio)
-    ratio?.classList.remove('aspect-ratio-box')
-  }, 2000)
+  const hasVisited = localStorage.getItem('hasVisited')
 
-  setTimeout(async () => {
-    await fetchAllAssets(assetsArr)
-  }, 5000) // 10s
+  if (!hasVisited) {
+    // This code block will only execute if the user is visiting for the first time
+
+    setTimeout(() => {
+      const ratio = document.getElementById('ratio')
+      console.log(ratio)
+      ratio?.classList.remove('aspect-ratio-box')
+    }, 10000)
+
+    setTimeout(async () => {
+      await fetchAllAssets(assetsArr)
+    }, 5000) // 5s
+
+    // Mark that the user has visited the site
+    localStorage.setItem('hasVisited', 'true')
+  }
 })()
+
+//remove aspect-ratio-box class after 0s
+setTimeout(() => {
+  const ratio = document.getElementById('ratio')
+  console.log(ratio)
+  ratio?.classList.remove('aspect-ratio-box')
+}, 0)
 
 app.mount('#app')
